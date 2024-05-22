@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Marco's Guess the Country</title>
+</head>
+<body>
+    <div class="page-container">
+        <div class="content-wrap">
+            <h1>Enter your name:</h1>
+            <div class="input-container">
+                <input type="text" id="username" name="username" placeholder="Enter your name">
+            </div>
+            
+            <div class="button-container">
+                <button onclick="submitUsername()">PLAY</button>
+            </div>
+        </div>
+        <footer>
+            <p><small>&copy; Marco's Guess the Country - Website by Marco.</small></p>
+        </footer>
+    </div>
+
+    <script>
+        function submitUsername() {
+            var username = document.getElementById('username').value;
+            if (username) {
+                // store the username in localStorage
+                localStorage.setItem('username', username);
+                // redirect to the play.html page
+                window.location.href = 'play.html';
+            } else {
+                alert('Please enter your name.');
+            }
+        }
+    </script>
+
+</body>
+       
